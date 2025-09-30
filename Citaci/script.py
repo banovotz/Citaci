@@ -3,10 +3,16 @@ import random
 import requests
 from datetime import datetime, timedelta
 from time import sleep
+import sys
+
+# parametri 
+
+sunday_to_start=sys.argv[1] # "2025/10/05"
+num_weeks=int(sys.argv[2]) # 6
+
 
 # ----------------------------
-# Učitaj čitače iz JSON-a
-# ----------------------------
+# Učitaj čitače iz JSON-a# ----------------------------
 def load_readers(filename):
     with open(filename, encoding="utf-8") as f:
         data = json.load(f)
@@ -110,7 +116,10 @@ def generate_schedule(sundays, readers_groups):
 # Generiranje HTML tablice
 # ----------------------------
 def generate_html(schedule):
-    html = '<table border="1" cellspacing="0" cellpadding="4">\n<thead>\n<tr>'
+    date_from = schedule[0]["datum"]
+    date_to = schedule[num_weeks-1]["datum"]
+    html = '<h1>RASPORED ČITAČA ZA NEDJELJE, SVETKOVINE I BLAGDANE OD ' + date_from + ' DO ' + date_to +'</h1>'
+    html += '<table border="1" cellspacing="0" cellpadding="4">\n<thead>\n<tr>'
     html += "<th>Datum / Nedjelja</th><th>Misa</th><th>1. čitanje / psalam</th><th>2. čitanje</th><th>Molitva vjernika</th>"
     html += "</tr>\n</thead>\n<tbody>\n"
 
@@ -125,6 +134,7 @@ def generate_html(schedule):
             html += f'<td>{day[time]["molitva"]}</td>'
             html += "</tr>\n"
     html += "</tbody>\n</table>"
+    
     return html
 
 # ----------------------------
@@ -134,7 +144,7 @@ if __name__ == "__main__":
     readers_groups = load_readers("citaci_grupe.json")
 
     # Generiraj narednih 6 nedjelja od zadanog datuma
-    sundays = fetch_next_sundays("2025/10/05", num_weeks=6)
+    sundays = fetch_next_sundays(sunday_to_start, num_weeks=num_weeks)
 
     # Generiraj raspored
     schedule = generate_schedule(sundays, readers_groups)
