@@ -13,3 +13,4 @@ Ova skripta generira listu čitača za nedjeljna čitanja na sv. misi.
 pokretanje:
 `` 
 $ python3 script.py
+`` 
