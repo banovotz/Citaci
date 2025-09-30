@@ -6,11 +6,14 @@ Ova skripta generira listu čitača za nedjeljna čitanja na sv. misi.
 * Čitač neće čitati dvije nedjelje za redom (ukoliko je to moguće obzirom na broj čitača u grupi) 
 * Čitač neće doći na red sve dok se svi čitači iz grupe ne izmjene. 
 * Rezultat se sprema u raspored.html kao lijepa HTML tablica.
-* prije pokretanja izmjeniti  sundays = fetch_next_sundays("DATE", num_weeks=N), gdje je 
-    * DATE u formatu YYYY/MM/DD, npr: 2025/10/05
-    * N=broj nedjelja od datuma za koje treba generirati popis
 
-pokretanje:
+* pokretanje:
 `` 
-$ python3 script.py
+$ python3 script.py <date> <nr_of_sundays>
 `` 
+   * eg:
+`` 
+python3 script.py "2025/10/05" 6
+`` 
+
+
