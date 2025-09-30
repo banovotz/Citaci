@@ -1,0 +1,36 @@
+{
+  "grupe_citaca": {
+    "9:00": [
+      "Ivana Novak",
+      "Petra Horvat",
+      "Marija Kovač",
+      "Ana Perić",
+      "Lana Matić",
+      "Ema Jurić",
+      "Sara Tomić",
+      "Mia Radić"
+    ],
+    "10:30": [
+      "Luka Babić",
+      "Ivan Petrović",
+      "Marko Lukić",
+      "Tomislav Grgić",
+      "Filip Vuković",
+      "Ante Kralj",
+      "Damir Novak",
+      "Matija Horvat",
+      "Nikola Blažević"
+    ],
+    "19:00": [
+      "Josip Marin",
+      "Petra Kovačić",
+      "Ana Vuk",
+      "Davor Brkić",
+      "Sanja Novak",
+      "Jadranka Horvat",
+      "Anđela Radić",
+      "Matej Tomić",
+      "Anastazija Perić"
+    ]
+  }
+}
