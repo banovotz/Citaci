@@ -118,7 +118,7 @@ def generate_schedule(sundays, readers_groups):
 def generate_html(schedule):
     date_from = schedule[0]["datum"]
     date_to = schedule[num_weeks-1]["datum"]
-    html = '<h1>RASPORED ČITAČA ZA NEDJELJE, SVETKOVINE I BLAGDANE OD ' + date_from + ' DO ' + date_to +'</h1>'
+    html = '<h1>RASPORED ČITAČA ZA NEDJELJE, SVETKOVINE I BLAGDANE OD ' + date_from + '. DO ' + date_to +'.</h1>'
     html += '<table border="1" cellspacing="0" cellpadding="4">\n<thead>\n<tr>'
     html += "<th>Datum / Nedjelja</th><th>Misa</th><th>1. čitanje / psalam</th><th>2. čitanje</th><th>Molitva vjernika</th>"
     html += "</tr>\n</thead>\n<tbody>\n"
